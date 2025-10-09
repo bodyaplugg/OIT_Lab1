@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jadoo | Відгук</title>
+    <link rel="stylesheet" href="forms.css" type="text/css">
+</head>
+<body>
+<form action="/submit-feedback" method="post">
+    <h2>Опитувальник та форма зворотного зв'язку</h2>
+
+    <div>
+        <label for="feedback-login">Ваш логін:</label>
+        <input type="text" id="feedback-login" name="login" placeholder="Введіть ваш логін" required>
+    </div>
+
+    <div>
+        <label for="feedback-email">Електронна пошта:</label>
+        <input type="email" id="feedback-email" name="email" placeholder="example@domain.com" required>
+    </div>
+
+    <div>
+        <label for="message">Ваше повідомлення / Відгук:</label>
+        <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Детально опишіть ваш відгук або пропозицію..."
+                required
+        ></textarea>
+    </div>
+
+    <div>
+        <label for="service-rating">Оцінка якості сервісу:</label>
+        <select id="service-rating" name="service_rating">
+            <option value="" disabled>Оберіть оцінку</option>
+            <option value="excellent">5 - Чудово</option>
+            <option value="good" selected>4 - Добре (за замовчуванням)</option>
+            <option value="satisfactory">3 - Задовільно</option>
+            <option value="poor">2 - Погано</option>
+            <option value="very_poor">1 - Дуже погано</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <legend>Чи будете ви рекомендувати нас?</legend>
+        <div>
+            <input type="radio" id="recommend-yes" name="recommendation" value="yes" required>
+            <label for="recommend-yes">Так, безумовно</label>
+        </div>
+        <div>
+            <input type="radio" id="recommend-maybe" name="recommendation" value="maybe">
+            <label for="recommend-maybe">Можливо</label>
+        </div>
+        <div>
+            <input type="radio" id="recommend-no" name="recommendation" value="no">
+            <label for="recommend-no">Ні</label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Основна мета вашої подорожі?</legend>
+        <input type="radio" id="goal-rest" name="trip_goal" value="rest" required>
+        <label for="goal-rest">Відпочинок</label><br>
+
+        <input type="radio" id="goal-business" name="trip_goal" value="business">
+        <label for="goal-business">Бізнес</label><br>
+
+        <input type="radio" id="goal-adventure" name="trip_goal" value="adventure">
+        <label for="goal-adventure">Пригода</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Які функції сайту ви використовували?</legend>
+        <div>
+            <input type="checkbox" id="feature-flights" name="features[]" value="flights">
+            <label for="feature-flights">Пошук авіаквитків</label>
+        </div>
+        <div>
+            <input type="checkbox" id="feature-hotels" name="features[]" value="hotels">
+            <label for="feature-hotels">Бронювання готелів</label>
+        </div>
+        <div>
+            <input type="checkbox" id="feature-guides" name="features[]" value="guides">
+            <label for="feature-guides">Туристичні гіди/Поради</label>
+        </div>
+    </fieldset>
+
+    <div>
+        <button type="reset">Очистити дані</button>
+        <button type="submit">Надіслати анкету</button>
+    </div>
+</form>
+</body>
+</html>
